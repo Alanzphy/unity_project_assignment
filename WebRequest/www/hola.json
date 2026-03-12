@@ -1,0 +1,8 @@
+{
+    "humedad":0.1,
+    "temperatura":30.2,
+    "sensores":[
+        {"nombre":"Sensor A"},
+        {"nombre":"Sensor B"}
+    ]
+}
