@@ -7,9 +7,11 @@ using System.Collections;
 // Access a website and use UnityWebRequest.Get to download a page.
 // Also try to download a non-existing page. Display the error.
 
+
 public class CustomRequest : MonoBehaviour
 {
     public string url;
+    public SensorManager sensorManager;
     
     void Start()
     {
@@ -37,12 +39,9 @@ public class CustomRequest : MonoBehaviour
                     Debug.LogError(pages[page] + ": HTTP Error: " + webRequest.error);
                     break;
                 case UnityWebRequest.Result.Success:
-                    //Debug.Log(pages[page] + ":\nReceived: " + webRequest.downloadHandler.text);
                     string jsonString = webRequest.downloadHandler.text;
-                    //PokeInfo pokeInfo = JsonUtility.FromJson<PokeInfo>(jsonString);
-                    //Debug.Log("Count: + " + pokeInfo.count);
                     SensorInfo sensorInfo = JsonUtility.FromJson<SensorInfo>(jsonString);
-                    Debug.Log("Count: + " + sensorInfo.sensores.Count);
+                    sensorManager.SetupSensors(sensorInfo);
                     break;
             }
         }
