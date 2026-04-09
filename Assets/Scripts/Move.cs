@@ -6,14 +6,22 @@ public class Move : MonoBehaviour
 {
     public float speed = 5f;
 
-    // Update is called once per frame
     void Update()
     {
-        if (Keyboard.current.wKey.isPressed)
+        float moveX = 0f;
+
+        if (Keyboard.current.aKey.isPressed)
         {
-            Vector3 direction = new Vector3(0,0,1);
-            transform.Translate(direction * speed * Time.deltaTime);
+            moveX += 1f;
         }
         
+        if (Keyboard.current.dKey.isPressed)
+        {
+            moveX -= 1f;
+        }
+
+        // Apply movement on the X axis
+        Vector3 direction = new Vector3(moveX, 0, 0);
+        transform.Translate(direction * speed * Time.deltaTime);
     }
 }
