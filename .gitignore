@@ -86,3 +86,17 @@ WebRequest/build/
 .vscode/
 .idea/
 *.code-workspace
+
+# ===========================
+# TextMesh Pro (auto-generado por Unity)
+# ===========================
+Assets/TextMesh Pro/
+Assets/TextMesh Pro.meta
+
+# ===========================
+# Scripts locales (no compartir)
+# ===========================
+Assets/Scripts/CustomRequest/UIManager.cs
+Assets/Scripts/CustomRequest/UIManager.cs.meta
+Assets/Scripts/CustomRequest/UISetup.cs
+Assets/Scripts/CustomRequest/UISetup.cs.meta
